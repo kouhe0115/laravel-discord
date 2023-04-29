@@ -17,9 +17,3 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::group(['middleware' => 'api'], function(){
-    Route::get('get', 'App\Http\Controllers\PostController@index');
-    Route::post('add', 'App\Http\Controllers\PostController@register');
-    Route::post('del', 'PostController@deleteTodo');
-});
